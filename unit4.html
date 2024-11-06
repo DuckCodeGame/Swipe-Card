@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3 - Facebook Information</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+        .card {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .card-text {
+            font-size: 16px;
+            margin: 0;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <p class="card-text" id="cardText"></p>
+        <div class="buttons">
+            <button class="button" onclick="previousCard()">Quẹt Trái</button>
+            <button class="button" onclick="nextCard()">Quẹt Phải</button>
+        </div>
+    </div>
+
+    <script>
+        const cards = [
+            "Student A (Employee): Hello! I’m Anh, working at a small company.",
+            "Student B (IT Expert): Hi Anh! I’m Nam, an IT expert. I would be happy to help.",
+            "Student A (Employee): We’re looking for a way to back up our data.",
+            "Student B (IT Expert): I see. Could you tell me the size of your company?",
+            "Student A (Employee): We have about 20 employees.",
+            "Student B (IT Expert): How much data do you want to back up?",
+            "Student A (Employee): Around 100GB. Could you suggest some options?",
+            "Student B (IT Expert): Sure. You could consider cloud storage, or a NAS (network attached storage). Cloud is flexible, while NAS is more secure.",
+            "Student A (Employee): That sounds good! What’s the cost like for these options?",
+            "Student B (IT Expert): Cloud storage can be around $10 monthly, while NAS can cost a few hundred dollars upfront.",
+            "Student A (Employee): Thanks for the advice.",
+            "Student B (IT Expert): You’re welcome!"
+        ];
+    
+        let currentCard = 0;
+    
+        function updateCard() {
+            document.getElementById('cardText').textContent = cards[currentCard];
+        }
+    
+        function nextCard() {
+            currentCard = (currentCard + 1) % cards.length;
+            updateCard();
+        }
+    
+        function previousCard() {
+            currentCard = (currentCard - 1 + cards.length) % cards.length;
+            updateCard();
+        }
+    
+        // Initialize the first card
+        updateCard();
+    </script>
+    
+</body>
+</html>

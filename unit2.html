@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2 - Application Software</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+        .card {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .card-text {
+            font-size: 16px;
+            margin: 0;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <p class="card-text" id="cardText"></p>
+        <div class="buttons">
+            <button class="button" onclick="previousCard()">Quẹt Trái</button>
+            <button class="button" onclick="nextCard()">Quẹt Phải</button>
+        </div>
+    </div>
+
+    <script>
+        const cards = [
+            "Student A: What’s the name of the application software you know well?",
+            "Student B: I know Microsoft Word.",
+            "Student A: What are the key features of Microsoft Word?",
+            "Student B: Microsoft Word offers text formatting, templates, real-time collaboration, spell check, image editing, tables, and PDF export.",
+            "Student A: Who are the main users of Microsoft Word?",
+            "Student B: It’s used by professionals, students, and anyone who needs to format documents.",
+            "Student A: What’s the main purpose or functions of Microsoft Word?",
+            "Student B: Its main purpose is to create, edit and format documents.",
+            "Student A: What are the benefits of using Microsoft Word?",
+            "Student B: Microsoft Word provides powerful text formatting, easy collaboration, and compatibility across devices.",
+            "Student A: What are the limitations of Microsoft Word?",
+            "Student B: The limitation of MS Word is that you have to pay to use professional features.",
+            "Student B: Now it’s my turn! What’s the name of the application software you know well?"
+        ];
+
+        let currentCard = 0;
+
+        function updateCard() {
+            document.getElementById('cardText').textContent = cards[currentCard];
+        }
+
+        function nextCard() {
+            currentCard = (currentCard + 1) % cards.length;
+            updateCard();
+        }
+
+        function previousCard() {
+            currentCard = (currentCard - 1 + cards.length) % cards.length;
+            updateCard();
+        }
+
+        // Initialize the first card
+        updateCard();
+    </script>
+</body>
+</html>

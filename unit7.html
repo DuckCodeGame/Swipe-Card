@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3 - Facebook Information</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+        .card {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .card-text {
+            font-size: 16px;
+            margin: 0;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <p class="card-text" id="cardText"></p>
+        <div class="buttons">
+            <button class="button" onclick="previousCard()">Quẹt Trái</button>
+            <button class="button" onclick="nextCard()">Quẹt Phải</button>
+        </div>
+    </div>
+
+    <script>
+        const cards = [
+            "A: Hello! Do you know how to install Windows 10? Can we share some information about it?",
+            "B: Sure! Let’s start.",
+            "A: Great! So, What do we do in the first step?",
+            "B: First, we need to insert the USB that has the Windows installation files into your computer. What’s the second step?",
+            "A: Now, We need to select language, time and region, and keyboard or input method. What do we do in the third step?",
+            "B: Next, click on 'Install Now' to start the installation. What about the fourth step?",
+            "A: Now, We will enter the product key. What's next?",
+            "B: For the fifth step, select 'Custom: Install Windows only' to do a clean installation. What should we do in the sixth step?",
+            "A: Now, choose the partition where we want to install Windows 10. What’s the seventh step?",
+            "B: Just wait while Windows installs. This might take some time. And what about the final step?",
+            "A: Once the installation is done, follow the prompts to personalize settings according to your preferences.",
+            "B: Perfect! Thanks for talking to me.",
+            "A: You're welcome"
+        ];
+    
+        let currentCard = 0;
+    
+        function updateCard() {
+            document.getElementById('cardText').textContent = cards[currentCard];
+        }
+    
+        function nextCard() {
+            currentCard = (currentCard + 1) % cards.length;
+            updateCard();
+        }
+    
+        function previousCard() {
+            currentCard = (currentCard - 1 + cards.length) % cards.length;
+            updateCard();
+        }
+    
+        // Initialize the first card
+        updateCard();
+    </script>
+    
+    
+    
+</body>
+</html>

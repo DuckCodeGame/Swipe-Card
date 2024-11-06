@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3 - Facebook Information</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+        .card {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .card-text {
+            font-size: 16px;
+            margin: 0;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <p class="card-text" id="cardText"></p>
+        <div class="buttons">
+            <button class="button" onclick="previousCard()">Quẹt Trái</button>
+            <button class="button" onclick="nextCard()">Quẹt Phải</button>
+        </div>
+    </div>
+
+    <script>
+        const cards = [
+            "A: Hi! Do you know the website Facebook.com?",
+            "B: Yes, of course! It’s one of the most popular websites in the world.",
+            "A: Great! Can we exchange some information about it?",
+            "B: Sure!",
+            "A: Do you know who owns Facebook?",
+            "B: Yes, it’s owned by Meta. What type of website is Facebook?",
+            "A: It’s a social networking website. Do you know when Facebook was launched?",
+            "B: It was launched in 2004. And do you know which programming languages were used to develop it?",
+            "A: Mostly PHP, along with some others. Do you know the main purposes of Facebook?",
+            "B: Facebook was created to connect people, share information, and build online communities. Do you know the key features of Facebook?",
+            "A: Its key features include adding friends, messaging, sharing photos and videos, and updating status. How many unique visitors does it have per month?",
+            "B: More than 2 billion unique visitors per month! And how about the number of search queries per day on Facebook?",
+            "A: It has 1 million search queries every day!",
+            "B: Thank you very much for your interesting information about Facebook.",
+            "A: You’re welcome, and thank you too!"
+        ];
+
+        let currentCard = 0;
+
+        function updateCard() {
+            document.getElementById('cardText').textContent = cards[currentCard];
+        }
+
+        function nextCard() {
+            currentCard = (currentCard + 1) % cards.length;
+            updateCard();
+        }
+
+        function previousCard() {
+            currentCard = (currentCard - 1 + cards.length) % cards.length;
+            updateCard();
+        }
+
+        // Initialize the first card
+        updateCard();
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3 - Facebook Information</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+        .card {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .card-text {
+            font-size: 16px;
+            margin: 0;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <p class="card-text" id="cardText"></p>
+        <div class="buttons">
+            <button class="button" onclick="previousCard()">Quẹt Trái</button>
+            <button class="button" onclick="nextCard()">Quẹt Phải</button>
+        </div>
+    </div>
+
+    <script>
+        const cards = [
+            "Student B (IT Support Technician): Hi there! How can I help you today?",
+            "Student A (Customer): Hi! My computer has been running really slowly whenever I try to open applications. It’s quite frustrating.",
+            "Student B: I see. Could you tell me what type of computer you're using?",
+            "Student A: Sure, it's a Dell laptop.",
+            "Student B: Got it. And what operating system are you running on your laptop?",
+            "Student A: I’m using Windows 10.",
+            "Student B: Thanks. Do you know how much RAM your computer has?",
+            "Student A: I think it has 4 GB of RAM.",
+            "Student B: Okay, that helps. Could you also tell me which applications you use frequently?",
+            "Student A: I mostly use Microsoft Office, Google Chrome, and sometimes Photoshop.",
+            "Student B: Based on what you've told me, it seems like the RAM might be a bit low. I recommend adding more RAM, cleaning your computer, and applying thermal paste to the chip.",
+            "Student A: Thank you! I will follow your suggestion.",
+            "Student B: You're welcome! And if the issue persists after making these changes, feel free to contact us again.",
+            "Student A: Will do! Thanks again for your help. Goodbye!"
+        ];
+    
+        let currentCard = 0;
+    
+        function updateCard() {
+            document.getElementById('cardText').textContent = cards[currentCard];
+        }
+    
+        function nextCard() {
+            currentCard = (currentCard + 1) % cards.length;
+            updateCard();
+        }
+    
+        function previousCard() {
+            currentCard = (currentCard - 1 + cards.length) % cards.length;
+            updateCard();
+        }
+    
+        // Initialize the first card
+        updateCard();
+    </script>
+    
+    
+</body>
+</html>
