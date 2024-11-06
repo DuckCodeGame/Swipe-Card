@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 3 - Facebook Information</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+        .card {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .card-text {
+            font-size: 16px;
+            margin: 0;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <p class="card-text" id="cardText"></p>
+        <div class="buttons">
+            <button class="button" onclick="previousCard()">Quẹt Trái</button>
+            <button class="button" onclick="nextCard()">Quẹt Phải</button>
+        </div>
+    </div>
+    
+    <script>
+        const cards = [
+            "A: Hello everyone, welcome to my introduction. My name is Nguyen Quyen Anh. I am 20 years old.",
+            "A: My hobbies are playing games and listening to music. It makes my life more fun.",
+            "A: I’m studying Multimedia Technology at Hanoi University of Industry.",
+            "A: My major is interesting and challenging.",
+            "A: After graduation, I want to become a graphic designer.",
+            "A: In this job I will use tools like Photoshop and Illustrator to create beautiful and attractive images.",
+            "A: I come from Nghe An province.",
+            "A: Nghệ An is known as the birthplace of President Ho Chi Minh, one of Vietnam's most respected leaders.",
+            "A: His hometown, Kim Liên Village in Nam Đàn District, attracts many visitors who come to learn about his early life and pay their respects.",
+            "A: That is also the reason why I love my hometown so much.",
+            "A: My favorite subject is 3D graphic design because it is so interesting.",
+            "A: In this course I use a tool called 3DSMAX to create 3D models such as people and objects.",
+            "A: My family has six members, and if I had to answer who I love the most, I would say I love them all equally because they always care about me."
+        ];
+    
+        let currentCard = 0;
+    
+        function updateCard() {
+            document.getElementById('cardText').textContent = cards[currentCard];
+        }
+    
+        function nextCard() {
+            currentCard = (currentCard + 1) % cards.length;
+            updateCard();
+        }
+    
+        function previousCard() {
+            currentCard = (currentCard - 1 + cards.length) % cards.length;
+            updateCard();
+        }
+    
+        // Initialize the first card
+        updateCard();
+    </script>
+    
+    
+    
+    
+    
+</body>
+</html>
