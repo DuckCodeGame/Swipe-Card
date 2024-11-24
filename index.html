@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index - Units</title>
+    <title>Dropdown Menu Adjust Width</title>
     <style>
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
             margin: 0;
+            padding-top: 50px; /* Đẩy nội dung cao lên */
             font-family: Arial, sans-serif;
             background-color: #f3f4f6;
         }
@@ -19,35 +18,112 @@
             font-size: 24px;
             margin-bottom: 20px;
         }
-        .unit-list {
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+        .dropdown-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 225px; /* Tăng chiều ngang lên 1.5 lần (150px x 1.5) */
+            text-align: center;
+        }
+        .dropdown-button:hover {
+            background-color: #0056b3;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             list-style-type: none;
             padding: 0;
+            margin: 0;
+            z-index: 1000;
+            border-radius: 5px;
+            width: 100%; /* Đặt chiều rộng thừa kế từ dropdown */
         }
-        .unit-list li {
-            margin: 10px 0;
+        .dropdown-menu li {
+            margin: 0;
         }
-        .unit-list a {
+        .dropdown-menu a {
             text-decoration: none;
             color: #007bff;
-            font-size: 18px;
+            font-size: 16px;
+            padding: 10px 15px;
+            display: block;
+            width: 100%; /* Đảm bảo mục menu chiếm toàn bộ chiều ngang */
+            box-sizing: border-box; /* Bao gồm padding trong chiều rộng */
         }
-        .unit-list a:hover {
-            text-decoration: underline;
+        .dropdown-menu a:hover {
+            background-color: #f0f0f0;
+        }
+        .dropdown.active .dropdown-menu {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <h1>Select a Unit</h1>
-    <ul class="unit-list">
-        <li><a href="myself.html">introduce myself</a></li>
-        <li><a href="unit1.html">Unit 1</a></li>
-        <li><a href="unit2.html">Unit 2</a></li>
-        <li><a href="unit3.html">Unit 3</a></li>
-        <li><a href="unit4.html">Unit 4</a></li>
-        <li><a href="unit5.html">Unit 5</a></li>
-        <li><a href="unit6.html">Unit 6</a></li>
-        <li><a href="unit7.html">Unit 7</a></li>
-        <li><a href="unit8.html">Unit 8</a></li>
-    </ul>
+    <h1>Dropdown Menu Adjusted Width</h1>
+
+    <!-- Dropdown đầu tiên -->
+    <div class="dropdown">
+        <button class="dropdown-button">Select a Unit</button>
+        <ul class="dropdown-menu">
+            <li><a href="myself.html">Introduce Myself</a></li>
+            <li><a href="unit1.html">Unit 1</a></li>
+            <li><a href="unit2.html">Unit 2</a></li>
+            <li><a href="unit3.html">Unit 3</a></li>
+            <li><a href="unit4.html">Unit 4</a></li>
+            <li><a href="unit5.html">Unit 5</a></li>
+            <li><a href="unit6.html">Unit 6</a></li>
+            <li><a href="unit7.html">Unit 7</a></li>
+            <li><a href="unit8.html">Unit 8</a></li>
+        </ul>
+    </div>
+
+    <!-- Dropdown thứ hai -->
+    <div class="dropdown">
+        <button class="dropdown-button">Select a Lesson</button>
+        <ul class="dropdown-menu">
+            <li><a href="1-Recent development in IT.html">Recent development in IT</a></li>
+            <li><a href="2-Favorite application software.html">Favorite application software</a></li>
+            <li><a href="3-Facebook.html">Facebook</a></li>
+            <li><a href="4-Backup solution.html">Backup solution</a></li>
+            <li><a href="6-Video Conferencing.html">Video Conferencing</a></li>
+            <li><a href="7-Install window.html">Install Windows</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Lấy tất cả các dropdowns
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        dropdowns.forEach(dropdown => {
+            const button = dropdown.querySelector('.dropdown-button');
+
+            // Bật/tắt menu khi nhấn nút
+            button.addEventListener('click', () => {
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Ẩn tất cả các menu khi nhấn ra ngoài
+        document.addEventListener('click', (event) => {
+            dropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

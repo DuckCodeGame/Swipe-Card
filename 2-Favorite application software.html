@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quẹt Thẻ AI và IoT</title>
+    <title>Favorite Application Software</title>
     <style>
         body {
             display: flex;
@@ -16,7 +16,7 @@
         }
         .card {
             width: 300px;
-            height: 200px;
+            height: 250px;
             padding: 20px;
             background-color: #ffffff;
             border-radius: 8px;
@@ -50,31 +50,22 @@
     <div class="card" id="card">
         <p class="card-text" id="cardText"></p>
         <div class="buttons">
-            <button class="button" onclick="previousCard()">Quẹt Trái</button>
-            <button class="button" onclick="nextCard()">Quẹt Phải</button>
+            <button class="button" onclick="previousCard()">Previous</button>
+            <button class="button" onclick="nextCard()">Next</button>
         </div>
     </div>
 
     <script>
         const cards = [
-            "B: Hi, can I ask you some questions about future trends in AI?",
-            "A: Of course!",
-            "B: What are your predictions about the development of AI in the future?",
-            "A: I think AI will become more intelligent and widespread across various fields, from healthcare and education to content creation and job automation.",
-            "B: When do you think this will become a reality?",
-            "A: I guess around 2030, AI could be developed enough to be widely applied at that level.",
-            "B: So, how do you think this will impact human's life?",
-            "A: I believe it will bring many benefits, making life more convenient. However, it can also replace some jobs, which can make many people unemployed.",
-            "B: Thank you for sharing this useful information!",
-            "A: You’re welcome!",
-            "A: Now, I also have a few questions about IoT. What’s your prediction about the development of IoT in the future?",
-            "B: I think IoT will connect many devices at home and in workplaces, allowing us to control them remotely.",
-            "A: When do you think this will become a reality?",
-            "B: I guess around 2050. By then, probably all devices at home could be connected through the network for automation",
-            "A: So, how do you think this will impact  human's life?",
-            "B: I believe it will help people save time and create many conveniences. However, it can also pose some data security risks.",
-            "A: Thank you for sharing; this is very interesting!",
-            "B: Happy to help!"
+            "My favorite application software is Microsoft Word.",
+            "It was created by Microsoft Corporation.",
+            "Microsoft Word is used for creating, editing, and formatting documents.",
+            "It’s used by professionals, students, and anyone who needs to format documents.",
+            "This software offers many benefits. It provides powerful text formatting tools, useful templates, and a spell-check feature.",
+            "It also allows real-time collaboration, making teamwork easier.",
+            "Additionally, it works well across different devices and can save documents as PDFs.",
+            "However, Microsoft Word has a limitation that you have to pay to use professional features.",
+            "Despite this, it remains an essential tool for many users."
         ];
 
         let currentCard = 0;

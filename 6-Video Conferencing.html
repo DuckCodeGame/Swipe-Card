@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quẹt Thẻ AI và IoT</title>
+    <title>Video Conferencing</title>
     <style>
         body {
             display: flex;
@@ -16,7 +16,7 @@
         }
         .card {
             width: 300px;
-            height: 200px;
+            height: 250px;
             padding: 20px;
             background-color: #ffffff;
             border-radius: 8px;
@@ -50,31 +50,19 @@
     <div class="card" id="card">
         <p class="card-text" id="cardText"></p>
         <div class="buttons">
-            <button class="button" onclick="previousCard()">Quẹt Trái</button>
-            <button class="button" onclick="nextCard()">Quẹt Phải</button>
+            <button class="button" onclick="previousCard()">Previous</button>
+            <button class="button" onclick="nextCard()">Next</button>
         </div>
     </div>
 
     <script>
         const cards = [
-            "B: Hi, can I ask you some questions about future trends in AI?",
-            "A: Of course!",
-            "B: What are your predictions about the development of AI in the future?",
-            "A: I think AI will become more intelligent and widespread across various fields, from healthcare and education to content creation and job automation.",
-            "B: When do you think this will become a reality?",
-            "A: I guess around 2030, AI could be developed enough to be widely applied at that level.",
-            "B: So, how do you think this will impact human's life?",
-            "A: I believe it will bring many benefits, making life more convenient. However, it can also replace some jobs, which can make many people unemployed.",
-            "B: Thank you for sharing this useful information!",
-            "A: You’re welcome!",
-            "A: Now, I also have a few questions about IoT. What’s your prediction about the development of IoT in the future?",
-            "B: I think IoT will connect many devices at home and in workplaces, allowing us to control them remotely.",
-            "A: When do you think this will become a reality?",
-            "B: I guess around 2050. By then, probably all devices at home could be connected through the network for automation",
-            "A: So, how do you think this will impact  human's life?",
-            "B: I believe it will help people save time and create many conveniences. However, it can also pose some data security risks.",
-            "A: Thank you for sharing; this is very interesting!",
-            "B: Happy to help!"
+            "Video conferencing is used to communicate online, especially for work or study.",
+            "Many people, like employees, students, or business owners, often use video conferencing to save time and stay connected.",
+            "One big advantage is that it allows people to meet from anywhere, so they don’t need to travel.",
+            "It also helps people work together in real time.",
+            "However, there are disadvantages. For example, the internet connection may not always work well, and some people feel tired after long online meetings.",
+            "In my opinion, video conferencing is very useful, but it’s important to use it wisely and not too much."
         ];
 
         let currentCard = 0;

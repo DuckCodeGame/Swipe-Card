@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quẹt Thẻ AI và IoT</title>
+    <title>Favorite Website</title>
     <style>
         body {
             display: flex;
@@ -16,7 +16,7 @@
         }
         .card {
             width: 300px;
-            height: 200px;
+            height: 250px;
             padding: 20px;
             background-color: #ffffff;
             border-radius: 8px;
@@ -50,31 +50,21 @@
     <div class="card" id="card">
         <p class="card-text" id="cardText"></p>
         <div class="buttons">
-            <button class="button" onclick="previousCard()">Quẹt Trái</button>
-            <button class="button" onclick="nextCard()">Quẹt Phải</button>
+            <button class="button" onclick="previousCard()">Previous</button>
+            <button class="button" onclick="nextCard()">Next</button>
         </div>
     </div>
 
     <script>
         const cards = [
-            "B: Hi, can I ask you some questions about future trends in AI?",
-            "A: Of course!",
-            "B: What are your predictions about the development of AI in the future?",
-            "A: I think AI will become more intelligent and widespread across various fields, from healthcare and education to content creation and job automation.",
-            "B: When do you think this will become a reality?",
-            "A: I guess around 2030, AI could be developed enough to be widely applied at that level.",
-            "B: So, how do you think this will impact human's life?",
-            "A: I believe it will bring many benefits, making life more convenient. However, it can also replace some jobs, which can make many people unemployed.",
-            "B: Thank you for sharing this useful information!",
-            "A: You’re welcome!",
-            "A: Now, I also have a few questions about IoT. What’s your prediction about the development of IoT in the future?",
-            "B: I think IoT will connect many devices at home and in workplaces, allowing us to control them remotely.",
-            "A: When do you think this will become a reality?",
-            "B: I guess around 2050. By then, probably all devices at home could be connected through the network for automation",
-            "A: So, how do you think this will impact  human's life?",
-            "B: I believe it will help people save time and create many conveniences. However, it can also pose some data security risks.",
-            "A: Thank you for sharing; this is very interesting!",
-            "B: Happy to help!"
+            "My favorite website is Facebook.com.",
+            "It is a social networking website owned by Meta.",
+            "Facebook was launched in 2004 to help people connect, share information, and build communities.",
+            "Its key features include adding friends, messaging, sharing photos and videos, and updating status.",
+            "The layout is user-friendly, with a blue and white background, clear text, and many helpful buttons.",
+            "Facebook is very popular, with over 2 billion visitors every month.",
+            "I often use it to chat with friends, read news, and join groups.",
+            "I like Facebook because it is easy to use and helps me stay connected with everyone."
         ];
 
         let currentCard = 0;
