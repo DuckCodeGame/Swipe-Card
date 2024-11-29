@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Transfer Instructions</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+        .card {
+            width: 300px;
+            height: 250px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .card-text {
+            font-size: 16px;
+            margin: 0;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <p class="card-text" id="cardText"></p>
+        <div class="buttons">
+            <button class="button" onclick="previousCard()">Previous</button>
+            <button class="button" onclick="nextCard()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const cards = [
+            "To transfer photos, connect the card reader to your computer and insert the memory card.",
+            "Open the photo software and select the card reader from the menu.",
+            "Choose a folder to save the photos, then click 'OK' to start the transfer.",
+            "Wait for the process to finish, then safely remove the card reader.",
+            "Your photos are now saved on your computer!"
+        ];
+
+        let currentCard = 0;
+
+        function updateCard() {
+            document.getElementById('cardText').textContent = cards[currentCard];
+        }
+
+        function nextCard() {
+            currentCard = (currentCard + 1) % cards.length;
+            updateCard();
+        }
+
+        function previousCard() {
+            currentCard = (currentCard - 1 + cards.length) % cards.length;
+            updateCard();
+        }
+
+        // Initialize the first card
+        updateCard();
+    </script>
+</body>
+</html>
