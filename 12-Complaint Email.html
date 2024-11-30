@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steps to Design a Website</title>
+    <title>Complaint About Product Issue</title>
     <style>
         body {
             display: flex;
@@ -16,7 +16,7 @@
         }
         .card {
             width: 300px;
-            height: 250px;
+            height: 300px;
             padding: 20px;
             background-color: #ffffff;
             border-radius: 8px;
@@ -25,11 +25,12 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
+            text-align: left;
+            overflow-y: auto;
         }
         .card-text {
-            font-size: 16px;
-            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
         }
         .buttons {
             margin-top: 20px;
@@ -57,14 +58,17 @@
 
     <script>
         const cards = [
-            "To design a website, you need to follow some steps.",
-            "First, plan your website carefully. Think about the content and structure.",
-            "Next, write and format the text to make it easy to read.",
-            "Then, add graphics and sounds to make the website more interesting.",
-            "After that, link the pages to each other using hyperlinks.",
-            "When everything is ready, publish the website so others can see it.",
-            "Finally, keep the website updated with new information and improvements.",
-            "These steps will help you create a good website."
+            "Subject: Complaint About Product Issue",
+            "Dear Customer Service,",
+            "I am writing to express my dissatisfaction with the product I purchased from your website.",
+            "The item I ordered is the Sony Wireless Headphones, model number Z1, which I bought on November 20, 2024.",
+            "Unfortunately, the product does not meet my expectations as it was delivered in the wrong color (white instead of black) and the noise-canceling feature does not work properly.",
+            "I would like to request a replacement for the correct color and a functioning product.",
+            "Please let me know how to proceed.",
+            "Thank you for your assistance. I look forward to your response.",
+            "Best regards,",
+            "Anh Nguyen",
+            "Phone number: 0377337329"
         ];
 
         let currentCard = 0;
